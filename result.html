@@ -2,13 +2,100 @@
 <html>
 <head>
   <title>Upload Result</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    
+    .wrapper {
+      padding-top: 100px;
+    }
+    
+    .box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .image {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .image img {
+      max-width: 25%; /* Adjusted to make the image 4 times smaller */
+      height: auto;
+    }
+    
+    .content {
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    .align-center {
+      text-align: center;
+    }
+    
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 20px 0;
+    }
+    
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    .generate-button {
+      background-color: green;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>This is a website to get prompts from images</h1>
-  <h2>Generated Prompt</h2>
-  <p>{{ prompt }}</p>
-  
-  <h2>Uploaded Image</h2>
-  <img src="data:image/jpeg;base64,{{ image_data }}" alt="Uploaded Image">
+  <section id="one" class="wrapper style2">
+    <div class="inner">
+      <div>
+        <div class="box">
+          <div class="image fit">
+            <img src="data:image/jpeg;base64,{{ image_data }}" alt="Uploaded Image"/>
+          </div>
+          <div class="content">
+            <header class="align-center">
+              <h2>Lorem ipsum dolor</h2>
+              <p>{{ prompt }}</p>
+            </header>
+            <hr />
+            <button class="generate-button" onclick="goBack()">Generate Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
 </body>
 </html>
